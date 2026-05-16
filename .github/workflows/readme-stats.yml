@@ -15,12 +15,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # STEP CORRETTIVO: Crea la cartella se non esiste
       - name: Ensure generated directory exists
         run: mkdir -p generated
 
-      - name: Generate Stats Cards
-        uses: lowlighter/metrics@latest
+      # Usiamo l'azione nativa che non gira in Docker e scrive direttamente nel workspace
+      - name: Metrics Report
+        uses: lowlighter/metrics@release/v3.34
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           filename: generated/github-stats.svg
@@ -30,12 +30,6 @@ jobs:
           plugin_languages_limit: 8
           plugin_languages_details: bytes-size, percentage
           config_timezone: Europe/Rome
-          output_action: none
-
-      - name: Commit and Push SVG
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add generated/github-stats.svg
-          git diff-index --quiet HEAD || git commit -m "Update GitHub profile stats"
-          git push
+          # Forza l'azione a depositare il file nel workspace condiviso di GitHub Actions
+          output_action: github-deploy-action
+          committer_branch: main
