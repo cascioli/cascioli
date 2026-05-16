@@ -9,7 +9,7 @@ With a background that bridges rigorous public cyber security training (includin
 ---
 
 ### 🌌 What I'm Up To Right Now
-- 🛠️ **Open Source:** Actively contributing to cloud security posture management (CSPM) tools like **Prowler**.
+- 🛠️ **Open Source:** Getting started with open-source contributions in Cloud Security and DevSecOps.
 - 🧠 **AI Security:** Exploring the frontier of Large Language Models and AI agent security governance.
 - 📱 **Mobile Architectures:** Refining scalable, serverless applications with Flutter and Cloud backend systems.
 
