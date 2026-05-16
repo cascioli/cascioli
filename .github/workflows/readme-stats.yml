@@ -15,6 +15,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # STEP CORRETTIVO: Crea la cartella se non esiste
+      - name: Ensure generated directory exists
+        run: mkdir -p generated
+
       - name: Generate Stats Cards
         uses: lowlighter/metrics@latest
         with:
@@ -26,7 +30,7 @@ jobs:
           plugin_languages_limit: 8
           plugin_languages_details: bytes-size, percentage
           config_timezone: Europe/Rome
-          output_action: none # Forzo l'azione a non fare il push da dentro Docker
+          output_action: none
 
       - name: Commit and Push SVG
         run: |
