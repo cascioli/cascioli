@@ -15,10 +15,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # STEP CORRETTIVO: Crea la cartella se non esiste
-      - name: Ensure generated directory exists
-        run: mkdir -p generated
-
       - name: Generate Pinned Projects SVG
         uses: lowlighter/metrics@latest
         with:
@@ -26,14 +22,5 @@ jobs:
           filename: generated/pinned-projects.svg
           base: ""
           plugin_repositories: yes
-          plugin_repositories_featured: simone-cascioli/IL_TUO_PROGETTO_PREFERITO
+          plugin_repositories_featured: cascioli/flutter-claude-pro-starter
           config_timezone: Europe/Rome
-          output_action: none
-
-      - name: Commit and Push Pinned SVG
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add generated/pinned-projects.svg
-          git diff-index --quiet HEAD || git commit -m "Update pinned projects card"
-          git push
