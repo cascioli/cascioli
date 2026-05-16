@@ -5,6 +5,9 @@ on:
     - cron: '15 0 * * *' # Gira ogni giorno a mezzanotte e un quarto
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   generate-pinned:
     runs-on: ubuntu-latest
