@@ -5,6 +5,9 @@ on:
     - cron: '0 0 * * *' # Gira ogni giorno a mezzanotte UTC
   workflow_dispatch: # Ti permette di avviarlo manualmente se vuoi testarlo subito
 
+permissions:
+  contents: write
+
 jobs:
   generate-stats:
     runs-on: ubuntu-latest
