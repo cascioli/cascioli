@@ -15,12 +15,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Ensure generated directory exists
-        run: mkdir -p generated
-
-      # Usiamo l'azione nativa che non gira in Docker e scrive direttamente nel workspace
-      - name: Metrics Report
-        uses: lowlighter/metrics@release/v3.34
+      - name: Generate Stats Cards
+        uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           filename: generated/github-stats.svg
@@ -30,6 +26,3 @@ jobs:
           plugin_languages_limit: 8
           plugin_languages_details: bytes-size, percentage
           config_timezone: Europe/Rome
-          # Forza l'azione a depositare il file nel workspace condiviso di GitHub Actions
-          output_action: github-deploy-action
-          committer_branch: main
