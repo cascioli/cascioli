@@ -40,8 +40,11 @@ With a background that bridges rigorous public cyber security training (includin
 ### 📊 GitHub Stats
 
 <p align="left">
-  <img src="https://github-readme-stats.vercel.app/api?username=cascioli&show_icons=true&theme=tokyonight&count_private=true" alt="Simone's GitHub Stats" height="180px"/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=cascioli&layout=compact&theme=tokyonight&langs_count=6" alt="Top Languages" height="180px"/>
+  <img src="./generated/github-stats.svg" alt="Simone's GitHub Stats" width="100%"/>
+</p>
+
+<p align="left">
+  <img src="./generated/pinned-projects.svg" alt="Featured Projects" width="100%"/>
 </p>
 
 ---
