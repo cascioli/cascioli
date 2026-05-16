@@ -1,6 +1,6 @@
 # Hi there, I'm Simone Cascioli 👋
 
-### Mobile, Cloud & AI Security Software Engineer 🚀🛡️
+### Mobile, Cloud & AI Security Engineer 🚀🛡️
 
 I am a Full Stack Developer with over 5 years of hands-on experience, currently pursuing a B.Sc. in Computer Engineering at Politecnico di Bari. My playground lies at the intersection of robust mobile development and cloud security governance. 
 
