@@ -2,8 +2,8 @@ name: Generate GitHub Readme Stats
 
 on:
   schedule:
-    - cron: '0 0 * * *' # Gira ogni giorno a mezzanotte UTC
-  workflow_dispatch: # Ti permette di avviarlo manualmente se vuoi testarlo subito
+    - cron: '0 0 * * *'
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -26,11 +26,3 @@ jobs:
           plugin_languages_limit: 8
           plugin_languages_details: bytes-size, percentage
           config_timezone: Europe/Rome
-
-      - name: Commit and Push Changes
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add generated/
-          git diff-index --quiet HEAD || git commit -m "Update GitHub profile stats"
-          git push
